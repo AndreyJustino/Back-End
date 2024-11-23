@@ -34,4 +34,8 @@ export const Company = database.define("company", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
