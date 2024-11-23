@@ -7,6 +7,8 @@ const server = express();
 
 server.use(express.json());
 server.use(corsMiddleware);
+
+server.use(hotelRouter);
 server.use(hotelRouter)
 
 
