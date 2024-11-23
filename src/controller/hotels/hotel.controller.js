@@ -8,7 +8,8 @@ const listHotels = async (req, res) => {
   try {
     const hotels = await Hotel.findAll({
       limit: pageSize,
-      offset: (page - 1) * pageSize
+      offset: (page - 1) * pageSize,
+      order: [['id', 'ASC']],
     });
 
     res.json(hotels);
