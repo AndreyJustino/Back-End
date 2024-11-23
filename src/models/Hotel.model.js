@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
-import { database } from "../database/config.js"; 
+import { database } from "../database/config.js";
 
 const Hotel = database.define(
-  "Hotel",
+  "hotels",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -50,7 +50,7 @@ const Hotel = database.define(
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-    placeId: {
+    placeid: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
@@ -74,11 +74,11 @@ const Hotel = database.define(
       type: DataTypes.JSON,
       allowNull: true,
     },
-    createdAt: {
+    createdat: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    updatedAt: {
+    updatedat: {
       type: DataTypes.DATE,
       allowNull: true,
     },
@@ -86,7 +86,7 @@ const Hotel = database.define(
       type: DataTypes.STRING(20),
       allowNull: true,
     },
-    category: {  
+    category: {
       type: DataTypes.STRING(255),
       allowNull: true,
     },
