@@ -1,14 +1,9 @@
-import {Datatype} from "sequelize"
-import sequelize from "../database/config.js"
+import { DataTypes } from "sequelize";
+import { database } from "../database/config.js";
 
-export const table1 = sequelize.define("", {}, {
-    freezeTableName: true 
-})
+const User = database.define('User', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  nome: { type: DataTypes.STRING, allowNull: false }
+});
 
-export const table2 = sequelize.define("", {}, {
-    freezeTableName: true 
-})
-
-export const table3 = sequelize.define("", {}, {
-    freezeTableName: true 
-})
+export { User };
