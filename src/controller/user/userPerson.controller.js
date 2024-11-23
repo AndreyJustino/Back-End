@@ -1,11 +1,10 @@
 import { loginPerson } from "../../models/userPerson.model.js";
-import {compare} from "bcrypt"
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
 
 dotenv.config()
 
-async function loginPerson(req,res) {
+async function loginPersonUser(req,res) {
     try{
         const person = await loginPerson.findOne({
             where: {
@@ -20,9 +19,7 @@ async function loginPerson(req,res) {
             })
         }
 
-        const validarPassword = await compare(req.body.password, person.password)
-
-        if(!validarPassword){
+        if(req.body.password !== person.password){
             return res.status(401).json({
                 message: "Senha inválida.",
                 status: 401
@@ -49,4 +46,4 @@ async function loginPerson(req,res) {
     }
 }
 
-export default loginPerson
+export default loginPersonUser;

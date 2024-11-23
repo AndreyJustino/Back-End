@@ -6,7 +6,7 @@ const routesUser = Router();
 
 
 
-routesUser.post("/loginPerson",verifyUse, loginPerson); 
+routesUser.post("/loginPerson", loginPerson); 
 
 
 

@@ -1,11 +1,10 @@
 import { loginCompany } from "../../models/userCompany.model.js"; 
-import { compare } from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-async function loginCompany(req, res) {
+async function loginCompanyUser(req, res) {
     try {
        
         const company = await loginCompany.findOne({
@@ -23,14 +22,11 @@ async function loginCompany(req, res) {
         }
 
        
-        const isPasswordValid = await compare(req.body.password, company.password);
-
-        
-        if (!isPasswordValid) {
+        if(req.body.password !== company.password){
             return res.status(401).json({
                 message: "Senha inválida.",
                 status: 401
-            });
+            })
         }
 
         
@@ -39,8 +35,8 @@ async function loginCompany(req, res) {
                 nome: company.name,
                 cnpj: company.cnpj
             },
-            process.env.SECRET, 
-            { expiresIn: "1h" } 
+            process.env.SECRET
+           
         );
 
         
@@ -60,4 +56,4 @@ async function loginCompany(req, res) {
     }
 }
 
-export default loginCompany;
+export default loginCompanyUser;
