@@ -1,5 +1,5 @@
 import express from "express";
-import { listHotels } from "../controllers/Hotels/Hotel.controller.js";
+import { listHotels } from "../controller/Hotels/Hotel.controller.js";
 
 const hotelRouter = express.Router()
 
