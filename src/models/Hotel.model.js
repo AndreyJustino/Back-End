@@ -88,7 +88,7 @@ const Hotel = database.define(
     },
     category: {  
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
