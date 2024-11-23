@@ -1,4 +1,4 @@
-import { loginPerson } from "../../models/userPerson.model.js";
+import { Person } from "../../models/userPerson.model.js";
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
 
@@ -6,7 +6,7 @@ dotenv.config()
 
 async function loginPersonUser(req,res) {
     try{
-        const person = await loginPerson.findOne({
+        const person = await Person.findOne({
             where: {
                 email: req.body.email
             }

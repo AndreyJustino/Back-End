@@ -3,12 +3,12 @@ import { Router } from "express";
 import loginCompany from "../controller/user/userCompany.controller.js"; 
 
 
-const routesUser = Router();
+const routesCompany  = Router();
 
 
 
-routesUser.post("/loginCompany", loginCompany); 
+routesCompany.post("/loginCompany", loginCompany); 
 
 
 
-export default routesUser;
+export default routesCompany ;

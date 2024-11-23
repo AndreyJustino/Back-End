@@ -1,4 +1,4 @@
-import { loginCompany } from "../../models/userCompany.model.js"; 
+import { Company  } from "../../models/userCompany.model.js"; 
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
@@ -7,7 +7,7 @@ dotenv.config();
 async function loginCompanyUser(req, res) {
     try {
        
-        const company = await loginCompany.findOne({
+        const company = await Company.findOne({
             where: {
                 cnpj: req.body.cnpj 
             }
