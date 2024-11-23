@@ -1,4 +1,3 @@
-import { database } from "../../database/config.js";
 import { Hotel } from "../../models/Hotel.model.js";
 
 const listHotels = async (req, res) => {
@@ -12,4 +11,15 @@ const listHotels = async (req, res) => {
   }
 };
 
-export { listHotels };
+const createHotels = async (req, res) => {
+  try {
+    const newHotel = await Hotel.create(req.body);
+    res.status(201).json(newHotel);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao criar usuário' });
+  }
+};
+
+
+
+export { listHotels, createHotels };
