@@ -1,7 +1,7 @@
 import express from 'express';
 import corsMiddleware from './middleware/corsMiddleware.js';
 import { tryConnectSequelize } from './database/config.js';
-import { hotelRouter } from './routes/Hotel.routes.js';
+import { hotelRouter } from './routes/hotel.routes.js';
 const port = process.env.PORT || 4000;
 const server = express();
 
