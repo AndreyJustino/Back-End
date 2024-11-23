@@ -113,6 +113,7 @@ Acesse o diretório do projeto e instale as dependências necessárias com o npm
 Crie um arquivo .env na raiz do projeto e adicione as seguintes variáveis de ambiente:
 
   ```bash
+  API_KEY=sua-chave-api-gemini
   DATABASE_URL=seu-link-do-banco-de-dados
   JWT_SECRET=sua-chave-secreta
   PORT=3000
