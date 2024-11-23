@@ -87,3 +87,49 @@ O projeto possui uma série de funcionalidades que melhoram a experiência do us
 - **Exibição de Hospedagens com Detalhes:**  
   As hospedagens são exibidas de forma clara, com informações detalhadas, incluindo preços, descrição, imagens, e avaliações de outros usuários, facilitando a escolha da opção ideal.
 
+## 6. Como Usar
+
+Para rodar o projeto localmente, siga as etapas abaixo:
+
+### 1. Clonar o Repositório
+
+Clone o repositório para o seu computador:
+
+  ```bash
+  git clone https://github.com/AndreyJustino/Back-End
+  ```
+
+### 2. Instalar as Dependências
+
+Acesse o diretório do projeto e instale as dependências necessárias com o npm:
+
+  ```bash
+  cd back-end
+  npm install
+  ```
+
+### 3. Configurar as Variáveis de Ambiente
+
+Crie um arquivo .env na raiz do projeto e adicione as seguintes variáveis de ambiente:
+
+  ```bash
+  DATABASE_URL=seu-link-do-banco-de-dados
+  JWT_SECRET=sua-chave-secreta
+  PORT=3000
+  ```
+
+Observação: Se você estiver usando o PostgreSQL, configure o DATABASE_URL conforme as credenciais do seu banco de dados.
+
+### 4. Rodar o Servidor
+
+Inicie o servidor com o comando:
+
+  ```bash
+  node server.js
+  ```
+
+Isso fará o servidor rodar localmente, geralmente na URL http://localhost:3000.
+
+### 5. Testar a API
+
+Você pode testar a API utilizando ferramentas como Postman ou Insomnia. A API estará disponível no endereço base configurado.
