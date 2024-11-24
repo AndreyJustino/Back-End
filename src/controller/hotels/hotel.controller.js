@@ -1,14 +1,22 @@
 import { Hotel } from "../../models/Hotel.model.js";
 
-const listHotels = async (req, res) => {
-  const page = Number(req.query.page) || 1;
-  const pageSize = req.query.pageSize || 10;
+const listHotels = async ({ query }, res) => {
+  const page = Number(query.page) || 1;
+  const pageSize = query.pageSize || 10;
+  const category = query.category;
+
+  let filter = {}
+
+  if (category) filter = { category: category.replaceAll('"', "") }
+  //refactor this
+
 
   try {
     const hotels = await Hotel.findAll({
       limit: pageSize,
       offset: (page - 1) * pageSize,
       order: [['id', 'ASC']],
+      where: filter
     });
 
     res.json(hotels);
