@@ -7,9 +7,8 @@ const listHotels = async ({ query }, res) => {
 
   let filter = {}
 
-  if (category) filter = { category: category.replaceAll('"', "") }
-  //refactor this
-
+  if (category !== "all") filter = { category: category.replaceAll('"', "") }
+  console.log(filter, category);
 
   try {
     const hotels = await Hotel.findAll({
