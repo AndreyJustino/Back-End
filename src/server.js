@@ -1,7 +1,7 @@
 import express from "express";
 import corsMiddleware from "./middleware/corsMiddleware.js";
 import { tryConnectSequelize } from "./database/config.js";
-import { hotelRouter } from "./routes/Hotel.routes.js";
+import  routesHotel  from "./routes/Hotel.routes.js";
 import  routesUser  from "./routes/userPerson.routes.js";
 import  routesCompany  from "./routes/userCompany.routes.js";
 
@@ -11,7 +11,7 @@ const server = express();
 server.use(express.json());
 server.use(corsMiddleware);
 
-server.use(hotelRouter);
+server.use(routesHotel);
 server.use(routesCompany);
 server.use(routesUser);
 

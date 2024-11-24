@@ -15,21 +15,6 @@ const filtroHotel = async (req, res) => {
   }
 };
 
-const filtroCasa = async (req, res) => {
-  try {
-    const hotels = await Hotel.findAll({
-      where: {
-        category: 'casa',
-      },
-    });
-
-    res.json(hotels);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: 'Erro ao listar hotéis' });
-  }
-};
-
 const filtroPousada = async (req, res) => {
   try {
     const hotels = await Hotel.findAll({
@@ -127,6 +112,5 @@ export {
   filtroAlbergue,
   filtroResort,
   filtroHotelFazenda,
-  filtroFlatApartHotel,
-  filtroCasa
+  filtroFlatApartHotel
 };

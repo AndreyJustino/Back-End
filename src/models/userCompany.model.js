@@ -1,7 +1,8 @@
 import { DataTypes } from "sequelize";
 import { database } from "../database/config.js";
 
-export const Company = database.define("company", {
+export const Company = database.define(
+  "company", {
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,

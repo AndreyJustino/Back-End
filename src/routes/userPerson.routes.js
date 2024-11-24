@@ -1,13 +1,10 @@
 import { Router } from "express";
-
-import loginPerson from "../controller/user/userPerson.controller.js"; 
+import { createPerson, listPeople, loginPersonUser } from "../controller/user/userPerson.controller.js";
 
 const routesUser = Router();
 
-
-
-routesUser.post("/loginPerson", loginPerson); 
-
-
+routesUser.post("/loginPerson", loginPersonUser);
+routesUser.get("/user/people", listPeople);
+routesUser.post("/user/person", createPerson);
 
 export default routesUser;
