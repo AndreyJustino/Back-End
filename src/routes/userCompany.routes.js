@@ -1,14 +1,10 @@
 import { Router } from "express";
+import { createCompany, listCompanies, loginCompanyUser } from "../controller/user/userCompany.controller.js";
 
-import loginCompany from "../controller/user/userCompany.controller.js"; 
+const routesCompany = Router();
 
+routesCompany.post("/loginCompany", loginCompanyUser);
+routesCompany.get("/user/companies", listCompanies);
+routesCompany.post("/user/company", createCompany);
 
-const routesCompany  = Router();
-
-
-
-routesCompany.post("/loginCompany", loginCompany); 
-
-
-
-export default routesCompany ;
+export default routesCompany;
