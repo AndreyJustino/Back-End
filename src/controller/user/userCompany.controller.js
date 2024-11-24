@@ -64,7 +64,7 @@ const createCompany = async (req, res) => {
     const newCompany = await Company.create(req.body);
     res.status(201).json(newCompany);
   } catch (error) {
-    res.status(500).json({ error: "Error creating company" });
+    res.status(500).json({ error: error.message });
   }
 };
 
