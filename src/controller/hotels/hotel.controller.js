@@ -1,13 +1,19 @@
+import { Op } from "sequelize";
 import { Hotel } from "../../models/Hotel.model.js";
 
 const listHotels = async ({ query }, res) => {
   const page = Number(query.page) || 1;
   const pageSize = query.pageSize || 10;
   const category = query.category || "all";
+  const search = query.search || "";
 
   let filter = {}
 
-  if (category !== "all") filter = { category: category.replaceAll('"', "") }
+  if (category !== "all") filter.category = category.replaceAll('"', "")
+  if (search !== "") filter.name = {
+    [Op.iLike]: `%${search}%`
+  }
+
   console.log(filter, category);
 
   try {
