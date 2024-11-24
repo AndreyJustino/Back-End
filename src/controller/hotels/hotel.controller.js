@@ -3,7 +3,7 @@ import { Hotel } from "../../models/Hotel.model.js";
 const listHotels = async ({ query }, res) => {
   const page = Number(query.page) || 1;
   const pageSize = query.pageSize || 10;
-  const category = query.category;
+  const category = query.category || "all";
 
   let filter = {}
 
