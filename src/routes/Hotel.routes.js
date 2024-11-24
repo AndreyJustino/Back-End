@@ -1,6 +1,7 @@
 import express from "express";
 import { filtroHotel, filtroPousada, filtroHostel, filtroAlbergue, filtroResort, filtroHotelFazenda, filtroFlatApartHotel } from "../controller/filtro/filtro.controller.js";
 import { createHotels, listHotels } from "../controller/hotels/hotel.controller.js";
+import getHotel from "../controller/hotels/getHotel.controller.js";
 
 const routesHotel = express.Router();
 
@@ -15,5 +16,6 @@ routesHotel.get('/hotels/filtro/albergue', filtroAlbergue);
 routesHotel.get('/hotels/filtro/resort', filtroResort);
 routesHotel.get('/hotels/filtro/hotel-fazenda', filtroHotelFazenda);
 routesHotel.get('/hotels/filtro/flat-apart-hotel', filtroFlatApartHotel);
+routesHotel.get('/hotels/:id', getHotel);
 
 export default routesHotel ;
